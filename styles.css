@@ -1,0 +1,24 @@
+.output{
+    border-radius: 5px;
+    margin: auto;
+    width: 500px;
+    height: fit-content;
+    color: black;
+    background-color: white;
+    padding: 5px;
+    transition: display 1s ease;
+}
+body{
+    transition: background-color 1s ease;
+    font-family: "Montserrat";
+    font-size: large;
+    background-color: rgb(37,37,37);
+}
+.click{
+    border-radius: 5px;
+    margin: 5px auto;
+    display: flex;
+    outline: none;
+    border: none;
+    background-color: turquoise;
+}
