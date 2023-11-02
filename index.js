@@ -263,7 +263,6 @@ async function getLatestIssue() {
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
-  console.log(process.versions.electron)
   recognition.start();
       fetch("https://api.github.com/users/BobdaProgrammer/events")
         .then((response) => response.json())
