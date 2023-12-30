@@ -98,22 +98,6 @@ function parseRequest(request) {
       recognition.stop();
     } else if (question.includes("start listening")) {
       recognition = new webkitSpeechRecognition();
-    } else if (question.includes("what is")|| question.includes("what's")) {
-      sum = request.split("what is ")[1]||request.split("what's")[1];
-      console.log(sum);
-      sum = sum.replace(/x/g, "*");
-      if (sum.includes("√")) {
-        sum = sum.replace(/√/g, "Math.sqrt(");
-        sum += ")";
-      }
-      sum = sum.replace(/\^/g, "**")
-      sum = sum.replace(/squared/g, "**2");
-      sum = sum.replace(/cubed/g, "**3");
-      sum = sum.replace(/÷/, "/")
-      if (/[+\-*/^()\d\s]+/.test(sum)) {
-        console.log(eval(sum));
-        speakText(eval(sum));
-      }
     } else if (question.includes("go rogue")) {
       rogue = true;
       document.body.style.backgroundColor = "rgb(185, 1, 1)";
@@ -173,6 +157,23 @@ function parseRequest(request) {
       searchChrome(request.split("search Google for ")[1]);
     }
   }
+    else if (question.includes("what is")|| question.includes("what's")) {
+      sum = request.split("what is ")[1]||request.split("what's")[1];
+      console.log(sum);
+      sum = sum.replace(/x/g, "*");
+      if (sum.includes("√")) {
+        sum = sum.replace(/√/g, "Math.sqrt(");
+        sum += ")";
+      }
+      sum = sum.replace(/\^/g, "**")
+      sum = sum.replace(/squared/g, "**2");
+      sum = sum.replace(/cubed/g, "**3");
+      sum = sum.replace(/÷/, "/")
+      if (/[+\-*/^()\d\s]+/.test(sum)) {
+        console.log(eval(sum));
+        speakText(eval(sum));
+      }
+    }
   else if (question.includes("stop being rogue")) {
     rogue = false;
     speakText("ok, sure");
